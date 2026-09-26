@@ -1,0 +1,146 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #171323;
+    color: white;
+    text-align: center;
+}
+
+.inicio {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+}
+
+.caja {
+    background: #241d35;
+    padding: 35px 25px;
+    border-radius: 25px;
+    max-width: 420px;
+    width: 100%;
+    box-shadow: 0 0 30px rgba(180, 100, 255, 0.25);
+}
+
+.pequeno {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+p {
+    line-height: 1.7;
+    color: #ddd5e8;
+    margin-bottom: 18px;
+}
+
+button {
+    background: #a855f7;
+    border: none;
+    color: white;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-size: 17px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: #c084fc;
+}
+
+.oculto {
+    display: none;
+}
+
+.cumple {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    background: linear-gradient(180deg, #171323, #26153b);
+}
+
+.cumple p {
+    max-width: 600px;
+}
+
+.globos {
+    font-size: 45px;
+    margin-bottom: 20px;
+    animation: flotar 2s infinite ease-in-out;
+}
+
+.nombre {
+    font-size: 25px;
+    color: #d8a4ff !important;
+}
+
+.mensaje {
+    padding: 80px 25px;
+    background: #201a2e;
+}
+
+.mensaje p {
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.final {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.mensaje-final {
+    margin-top: 30px;
+    font-size: 19px;
+    color: #e5c7ff;
+}
+
+@keyframes flotar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+.confeti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    top: -20px;
+    animation: caer 3s linear forwards;
+    z-index: 1000;
+}
+
+@keyframes caer {
+    to {
+        transform: translateY(110vh) rotate(720deg);
+    }
+}
