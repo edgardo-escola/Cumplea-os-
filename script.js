@@ -1,258 +1,33 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+function abrirSorpresa() {
+    document.getElementById("inicio").style.display = "none";
+    document.getElementById("sorpresa").style.display = "block";
+
+    window.scrollTo(0, 0);
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background: #100b1c;
-    color: white;
-    text-align: center;
+function ultimaSorpresa() {
+
+    document.getElementById("finalMensaje").style.display = "block";
+
+    crearConfeti();
 }
 
-.oculto {
-    display: none;
-}
+function crearConfeti() {
 
-.inicio {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 25px;
-    position: relative;
-    overflow: hidden;
-    background: radial-gradient(circle at center, #2b1745, #100b1c 70%);
-}
+    for (let i = 0; i < 100; i++) {
 
-.caja {
-    width: 100%;
-    max-width: 430px;
-    padding: 40px 25px;
-    border: 1px solid #8b4dcc;
-    border-radius: 25px;
-    background: rgba(30, 18, 48, 0.9);
-    box-shadow: 0 0 35px rgba(168, 85, 247, 0.25);
-}
+        const confeti = document.createElement("div");
 
-.ey {
-    color: #d8a4ff;
-    font-size: 18px;
-    margin-bottom: 15px;
-}
+        confeti.classList.add("confeti");
 
-h1 {
-    font-size: 38px;
-    margin-bottom: 20px;
-}
+        confeti.style.left = Math.random() * 100 + "vw";
 
-h2 {
-    font-size: 29px;
-    margin-bottom: 20px;
-}
+        confeti.style.background =
+            `hsl(${Math.random() * 360}, 80%, 65%)`;
 
-p {
-    color: #ddd5e8;
-    line-height: 1.7;
-    margin-bottom: 18px;
-}
+        confeti.style.animationDelay =
+            Math.random() * 1.5 + "s";
 
-button {
-    border: none;
-    border-radius: 30px;
-    padding: 15px 32px;
-    margin-top: 10px;
-    background: linear-gradient(90deg, #8b3dff, #c04cff);
-    color: white;
-    font-size: 17px;
-    cursor: pointer;
-    transition: 0.3s;
-    box-shadow: 0 5px 20px rgba(168, 85, 247, 0.3);
-}
-
-button:hover {
-    transform: scale(1.06);
-}
-
-.estrellas {
-    position: absolute;
-    top: 50px;
-    font-size: 25px;
-    color: #c084fc;
-}
-
-.decoracion {
-    position: absolute;
-    bottom: 45px;
-    color: #c084fc;
-    font-size: 25px;
-}
-
-.cumple {
-    min-height: 100vh;
-    padding: 35px 25px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background:
-        radial-gradient(circle at 20% 30%, #40205f, transparent 30%),
-        radial-gradient(circle at 80% 70%, #35194f, transparent 30%),
-        #161020;
-}
-
-.cumple p {
-    max-width: 600px;
-}
-
-.cumple h1 {
-    margin-bottom: 5px;
-}
-
-.cumple h2 {
-    color: #d19aff;
-    font-size: 30px;
-}
-
-.globos {
-    font-size: 45px;
-    margin-bottom: 25px;
-    animation: flotar 2s infinite ease-in-out;
-}
-
-.pequeno {
-    color: #c7a5dd;
-}
-
-.corazon {
-    color: #b85cff;
-    font-size: 45px;
-    margin-top: 15px;
-    animation: latido 1.2s infinite;
-}
-
-.mensaje {
-    padding: 80px 25px;
-    background: #1c1428;
-}
-
-.mensaje p {
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.recuerdo {
-    padding: 80px 25px;
-    background: #120d1e;
-}
-
-.tarjeta {
-    max-width: 500px;
-    margin: 30px auto 0;
-    padding: 30px 25px;
-    border-radius: 25px;
-    background: #211631;
-    border: 1px solid #713ca1;
-    box-shadow: 0 10px 30px rgba(100, 40, 150, 0.2);
-}
-
-.icono {
-    font-size: 45px;
-    margin-bottom: 15px;
-}
-
-.tarjeta h3 {
-    color: #d49aff;
-    font-size: 23px;
-    margin-bottom: 20px;
-}
-
-.broma {
-    color: #e0aaff;
-    font-weight: bold;
-}
-
-.final {
-    min-height: 80vh;
-    padding: 70px 25px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: #100b1c;
-    position: relative;
-    overflow: hidden;
-}
-
-.mensaje-final {
-    max-width: 500px;
-    margin-top: 30px;
-    padding: 30px 25px;
-    border-radius: 25px;
-    border: 1px solid #9b4dca;
-    background: #211631;
-    animation: aparecer 0.8s ease;
-}
-
-.mensaje-final p {
-    margin-bottom: 10px;
-}
-
-.corazones {
-    font-size: 25px;
-    margin-bottom: 15px;
-}
-
-.confeti-texto {
-    font-size: 25px;
-    margin-top: 15px;
-}
-
-.confeti {
-    position: fixed;
-    top: -20px;
-    width: 10px;
-    height: 10px;
-    z-index: 1000;
-    animation: caer 3s linear forwards;
-}
-
-@keyframes flotar {
-    0%, 100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-12px);
-    }
-}
-
-@keyframes latido {
-    0%, 100% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.2);
-    }
-}
-
-@keyframes aparecer {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes caer {
-    to {
-        transform: translateY(110vh) rotate(720deg);
+        document.getElementById("confeti").appendChild(confeti);
     }
 }
