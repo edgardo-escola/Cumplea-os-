@@ -1,4 +1,5 @@
 function abrirSorpresa() {
+
     const inicio = document.getElementById("inicio");
     const sorpresa = document.getElementById("sorpresa");
 
@@ -13,8 +14,11 @@ function abrirSorpresa() {
     window.scrollTo(0, 0);
 }
 
+
 function ultimaSorpresa() {
-    const finalMensaje = document.getElementById("finalMensaje");
+
+    const finalMensaje =
+        document.getElementById("finalMensaje");
 
     if (!finalMensaje) {
         console.error("No se encontró finalMensaje.");
@@ -26,8 +30,11 @@ function ultimaSorpresa() {
     crearConfeti();
 }
 
+
 function crearConfeti() {
-    const contenedor = document.getElementById("confeti");
+
+    const contenedor =
+        document.getElementById("confeti");
 
     if (!contenedor) {
         console.error("No se encontró el contenedor de confeti.");
@@ -37,11 +44,14 @@ function crearConfeti() {
     contenedor.innerHTML = "";
 
     for (let i = 0; i < 100; i++) {
-        const confeti = document.createElement("div");
+
+        const confeti =
+            document.createElement("div");
 
         confeti.classList.add("confeti");
 
-        confeti.style.left = Math.random() * 100 + "vw";
+        confeti.style.left =
+            Math.random() * 100 + "vw";
 
         confeti.style.backgroundColor =
             `hsl(${Math.random() * 360}, 80%, 65%)`;
@@ -51,4 +61,4 @@ function crearConfeti() {
 
         contenedor.appendChild(confeti);
     }
-} 
+}
