@@ -8,10 +8,19 @@ function abrirSorpresa() {
         return;
     }
 
-    inicio.style.display = "none";
-    sorpresa.style.display = "block";
+    inicio.classList.add("saliendo");
 
-    window.scrollTo(0, 0);
+    setTimeout(() => {
+
+        inicio.style.display = "none";
+
+        sorpresa.style.display = "block";
+
+        sorpresa.classList.add("apareciendo");
+
+        window.scrollTo(0, 0);
+
+    }, 700);
 }
 
 
