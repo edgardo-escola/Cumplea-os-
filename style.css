@@ -4,61 +4,77 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: Arial, sans-serif;
     background: #100b1c;
     color: white;
     text-align: center;
+    overflow-x: hidden;
 }
 
 .oculto {
     display: none;
 }
 
+
+/* =========================
+   PRIMERA PANTALLA
+========================= */
+
 .inicio {
     min-height: 100vh;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     padding: 25px;
+
     position: relative;
     overflow: hidden;
 
     background:
-        radial-gradient(circle at center, #2b1745, #100b1c 70%);
+        radial-gradient(
+            circle at center,
+            #321650,
+            #100b1c 70%
+        );
 }
 
 .caja {
     width: 100%;
     max-width: 430px;
-    padding: 40px 25px;
 
-    border: 1px solid #8b4dcc;
-    border-radius: 25px;
+    padding: 45px 25px;
 
-    background: rgba(30, 18, 48, 0.9);
+    border: 1px solid #9b55e8;
+    border-radius: 28px;
+
+    background: rgba(30, 18, 48, 0.92);
 
     box-shadow:
-        0 0 35px rgba(168, 85, 247, 0.25);
+        0 0 25px rgba(168, 85, 247, 0.25),
+        0 0 70px rgba(168, 85, 247, 0.10);
+
+    animation: entrada 1s ease;
 }
 
 .ey {
     color: #d8a4ff;
-    font-size: 18px;
+    font-size: 19px;
     margin-bottom: 15px;
 }
 
-h1 {
+.caja h1 {
     font-size: 38px;
     margin-bottom: 20px;
 }
 
-h2 {
-    font-size: 29px;
-    margin-bottom: 20px;
-}
-
-p {
+.caja p {
     color: #ddd5e8;
     line-height: 1.7;
     margin-bottom: 18px;
@@ -78,18 +94,24 @@ button {
     );
 
     color: white;
+
     font-size: 17px;
 
     cursor: pointer;
 
-    transition: 0.3s;
-
     box-shadow:
-        0 5px 20px rgba(168, 85, 247, 0.3);
+        0 5px 20px rgba(168, 85, 247, 0.35);
+
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s;
 }
 
 button:hover {
     transform: scale(1.06);
+
+    box-shadow:
+        0 8px 30px rgba(192, 76, 255, 0.5);
 }
 
 .estrellas {
@@ -97,7 +119,10 @@ button:hover {
     top: 50px;
 
     font-size: 25px;
+
     color: #c084fc;
+
+    animation: estrellas 3s ease-in-out infinite;
 }
 
 .decoracion {
@@ -109,7 +134,9 @@ button:hover {
 }
 
 
-/* CUMPLEAÑOS */
+/* =========================
+   CUMPLEAÑOS
+========================= */
 
 .cumple {
     min-height: 100vh;
@@ -124,7 +151,7 @@ button:hover {
     background:
         radial-gradient(
             circle at 20% 30%,
-            #40205f,
+            #482266,
             transparent 30%
         ),
         radial-gradient(
@@ -133,34 +160,55 @@ button:hover {
             transparent 30%
         ),
         #161020;
+
+    animation: aparecer 1s ease;
 }
 
 .cumple p {
     max-width: 600px;
-}
 
-.cumple h1 {
-    margin-bottom: 5px;
-}
+    color: #ddd5e8;
 
-.cumple h2 {
-    color: #d19aff;
-    font-size: 32px;
-}
+    line-height: 1.7;
 
-.pequeno {
-    color: #c7a5dd;
+    margin-bottom: 18px;
 }
 
 .globos {
-    font-size: 45px;
+    font-size: 48px;
+
     margin-bottom: 25px;
 
     animation: flotar 2s infinite ease-in-out;
 }
 
+.pequeno {
+    color: #c7a5dd !important;
+}
 
-/* FINAL */
+.cumple h1 {
+    font-size: 42px;
+
+    margin-bottom: 8px;
+
+    text-shadow:
+        0 0 20px rgba(192, 132, 252, 0.35);
+}
+
+.cumple h2 {
+    color: #d19aff;
+
+    font-size: 34px;
+
+    margin-bottom: 25px;
+
+    animation: brillo 2s ease-in-out infinite;
+}
+
+
+/* =========================
+   FINAL
+========================= */
 
 .final {
     min-height: 80vh;
@@ -172,23 +220,47 @@ button:hover {
     justify-content: center;
     align-items: center;
 
-    background: #100b1c;
+    background:
+        radial-gradient(
+            circle at center,
+            #261437,
+            #100b1c 70%
+        );
 
     position: relative;
+
     overflow: hidden;
 }
 
+.final h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.final p {
+    color: #ddd5e8;
+    line-height: 1.7;
+}
+
+
+/* MENSAJE FINAL */
+
 .mensaje-final {
+    width: 100%;
     max-width: 500px;
 
     margin-top: 30px;
-    padding: 30px 25px;
+
+    padding: 32px 25px;
 
     border-radius: 25px;
 
-    border: 1px solid #9b4dca;
+    border: 1px solid #a65be8;
 
     background: #211631;
+
+    box-shadow:
+        0 0 35px rgba(168, 85, 247, 0.25);
 
     animation: aparecer 0.8s ease;
 }
@@ -198,17 +270,23 @@ button:hover {
 }
 
 .corazones {
-    font-size: 25px;
+    font-size: 28px;
+
     margin-bottom: 15px;
+
+    animation: brillo 2s infinite;
 }
 
 .confeti-texto {
-    font-size: 25px;
-    margin-top: 15px;
+    font-size: 27px;
+
+    margin-top: 18px;
 }
 
 
-/* CONFETI */
+/* =========================
+   CONFETI
+========================= */
 
 .confeti {
     position: fixed;
@@ -220,12 +298,42 @@ button:hover {
 
     z-index: 1000;
 
+    border-radius: 2px;
+
     animation:
         caer 3s linear forwards;
 }
 
 
-/* ANIMACIONES */
+/* =========================
+   ANIMACIONES
+========================= */
+
+@keyframes entrada {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 @keyframes flotar {
 
@@ -238,16 +346,29 @@ button:hover {
     }
 }
 
-@keyframes aparecer {
+@keyframes brillo {
 
-    from {
-        opacity: 0;
-        transform: translateY(20px);
+    0%, 100% {
+        text-shadow:
+            0 0 5px rgba(192, 132, 252, 0.2);
     }
 
-    to {
+    50% {
+        text-shadow:
+            0 0 20px rgba(192, 132, 252, 0.7);
+    }
+}
+
+@keyframes estrellas {
+
+    0%, 100% {
+        opacity: 0.6;
+        transform: scale(1);
+    }
+
+    50% {
         opacity: 1;
-        transform: translateY(0);
+        transform: scale(1.08);
     }
 }
 
@@ -257,5 +378,33 @@ button:hover {
         transform:
             translateY(110vh)
             rotate(720deg);
+    }
+}
+
+
+/* =========================
+   CELULARES PEQUEÑOS
+========================= */
+
+@media (max-width: 400px) {
+
+    .caja {
+        padding: 35px 20px;
+    }
+
+    .caja h1 {
+        font-size: 32px;
+    }
+
+    .cumple h1 {
+        font-size: 35px;
+    }
+
+    .cumple h2 {
+        font-size: 30px;
+    }
+
+    .globos {
+        font-size: 40px;
     }
 }
