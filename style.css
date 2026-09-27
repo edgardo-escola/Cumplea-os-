@@ -143,36 +143,7 @@ button:hover {
     margin-right: auto;
 }
 
-.recuerdo {
-    padding: 80px 25px;
-    background: #120d1e;
-}
 
-.tarjeta {
-    max-width: 500px;
-    margin: 30px auto 0;
-    padding: 30px 25px;
-    border-radius: 25px;
-    background: #211631;
-    border: 1px solid #713ca1;
-    box-shadow: 0 10px 30px rgba(100, 40, 150, 0.2);
-}
-
-.icono {
-    font-size: 45px;
-    margin-bottom: 15px;
-}
-
-.tarjeta h3 {
-    color: #d49aff;
-    font-size: 23px;
-    margin-bottom: 20px;
-}
-
-.broma {
-    color: #e0aaff;
-    font-weight: bold;
-}
 
 .final {
     min-height: 80vh;
